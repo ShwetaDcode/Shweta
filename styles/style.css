@@ -258,6 +258,29 @@ footer {
     margin: 0;
 }
 
+.research-points {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 0.97rem;
+    line-height: 1.6;
+    list-style-type: square;
+}
+
+.research-points li {
+    margin-bottom: 0.6rem;
+}
+
+.research-tile p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color:  #222;
+    text-align: left;
+}
+
+
 /*-------------------------------------------------------------*/
 
 /* Grid Layout */
@@ -327,7 +350,6 @@ footer {
       font-size: 0.9rem;
     }
   }
-
 
   /*-------------------------------------------------------------*/
 
