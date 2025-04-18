@@ -1,0 +1,329 @@
+:root {
+    --primary: #0f172a;
+    --secondary: #1e293b;
+    --accent: #38bdf8;
+    --light: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+nav.navbar {
+    background-color: var(--secondary);
+    padding: 0.5rem 1rem; /* Reduced padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 3.5rem; /* Optional: cap the height */
+}
+
+nav.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav.navbar ul li a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav.navbar ul li a:hover {
+    color: var(--accent);
+}
+
+/* Add top padding to offset navbar */
+section {
+    padding-top: 5rem; /* Adjust to match navbar height */
+    margin-top: -5rem; /* Offset the section position */
+}
+
+#contact {
+    padding-top: 5rem;  /* Adjust if needed */
+    margin-top: -5rem;  /* Same value as padding-top */
+}
+
+/* Animated */
+#typed-text {
+    font-size: 1.2rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    min-height: 1.3em; /* Locks the space so content below doesn't jump */
+  }
+
+
+header {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+}
+
+section {
+    margin-top: 0rem;
+}
+
+h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+    background-color: var(--secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--secondary);
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+/* Project grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-tile {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary);
+    padding: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+    display: block;
+    color: #000;
+}
+
+.project-tile:hover {
+    transform: translateY(-5px);
+}
+
+/* Background media */
+.project-tile img,
+.project-tile video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.project-tile:hover img,
+.project-tile:hover video {
+    opacity: 0.6;
+}
+
+/* Fixes description not showing */
+.project-info {
+    position: absolute;
+    z-index: 2;
+    inset: 0; /* replaces top, left, width, height for full coverage */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    border-radius: 0.75rem;
+    pointer-events: none; /* allows clicks to pass through if needed */
+}
+
+/* Text styles */
+.project-info h3,
+.project-info p {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+}
+
+.project-info p {
+    margin-top: 11.5rem; /* creates space below the h3 */
+    font-size: 0.95rem;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.5); /* semi-transparent light box */
+    padding: 0.75rem 1rem;
+    /* border-radius: 0.5rem; */
+    width: 100%; /* ensures full width inside the parent */
+}
+
+
+
+/* Fallback style for text-only tiles */
+.project-tile:not(:has(img)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(to bottom right, #333, #555);
+    color: #fff;
+    border-radius: 0.75rem;
+}
+
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+        
+
+/*-------------------------------------------------------------*/
+
+.research-tile {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.research-tile h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.research-tile .status {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    margin-left: 0.5rem;
+}
+
+.research-tile p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Grid Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-top: 0rem;
+  }
+  
+  /* Premium Tile Style */
+  .skill-tile {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1rem;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    box-shadow: 0 8px 24px var(--primary-glow);
+    transition: all 0.35s ease;
+    color: var(--text-main);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hover effect */
+  .skill-tile:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 32px var(--hover-glow);
+    border-color: rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Headers */
+  .skill-tile h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+  }
+  
+  /* List inside tile */
+  .skill-tile ul {
+    padding-left: 1.2rem;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .skill-tile li {
+    margin-bottom: 0.5rem;
+    list-style-type: disc;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 480px) {
+    .skill-tile {
+      padding: 1.5rem;
+    }
+  
+    .skill-tile h3 {
+      font-size: 1.2rem;
+    }
+  
+    .skill-tile ul {
+      font-size: 0.9rem;
+    }
+  }
