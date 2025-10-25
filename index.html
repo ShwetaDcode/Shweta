@@ -1,272 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=1280">
-    <title>Shweta Das | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- CRITICAL CHANGE: Always use a responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta Das | AI Research & Data Science</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the clean, light theme and Inter font */
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc; /* Very light, almost white background */
+            color: #1f2937; /* Dark gray for text */
+        }
+        .header-bg {
+            /* Subtle background for the header area */
+            background-color: #ffffff;
+        }
+        /* Custom styling for the sticky navigation bar */
+        .navbar-sticky {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        /* Style for the typing effect cursor */
+        #cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: #4f46e5;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Ensures the Google Form iframe is responsive */
+        .form-frame-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio (adjust as needed) */
+        }
+        .form-frame-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.75rem; /* Match Tailwind's rounded-xl */
+        }
+    </style>
 </head>
 
+<body class="selection:bg-indigo-100 selection:text-indigo-600">
 
-<body>  
-
-    <nav class="navbar">
-        <ul>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills & Education</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      
-
-    <header id="home">
-        <h1>Shweta Das</h1>
-        <p>From Algorithms to Interfaces</p>
-        <div id="typed-container">
-            <span id="typed-text"></span><span id="cursor"></span>
-          </div>
-          
-    </header>
-
-    <div class="container">
-
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <ul>
-              <li>
-                <strong>Dell Technologies – Senior Technician, Technical Support</strong><br><br>
-                <em>July 2024 – October 2024</em><br><br>
-                ✓ Delivered advanced technical support via chat, resolving complex issues related to Dell products.<br><br>
-                ✓ Utilized diagnostic tools for problem analysis, ensuring efficient IT resolution.<br><br>
-                ✓ Maintained high customer service standards and drove operational excellence through proactive case management.
-              </li>
-              <li>
-                <strong>SolutionBuggy – Software Developer (Intern)</strong><br><br>
-                <em>February 2023 – April 2023</em><br><br>
-                ✓ Migrated the official SolutionBuggy website to Laravel 8.0, enhancing backend functionality.<br><br>
-                ✓ Contributed to frontend improvements using ReactJS.<br><br>
-                ✓ Collaborated with the backend team on database management, email systems, and payment confirmations.
-              </li>
-            </ul>
-          </section>          
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <a href="https://github.com/ShwetaDcode/ToneForgeAI" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="project-tile">
-                        <img src="media/toneforgeAI-cover.jpg" alt="ToneForge AI">
-                        <div class="project-info">
-                            <h3></h3>
-                            <p>ToneForge AI</p>
-                        </div>
-                    </div>
-                </a> 
-
-                <!-- Project 2 -->
-                <a href="https://github.com/ShwetaDcode/plenT" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="project-tile">
-                        <img src="media/plenT-cover.jpg" alt="plenT">
-                        <div class="project-info">
-                            <h3>plenT</h3>
-                            <p>Crypto Trading (React, Node, MongoDB). A FullStack Web-App</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 3 -->
-                <!-- <a href="https://github.com/ShwetaDcode" class="project-link" target="_blank" rel="noopener noreferrer"> -->
-                <a href="#" onclick="showUpdationMessage(); return false;">
-                    <div class="project-tile">
-                        <img src="media/pystats-cover.jpg" alt="TaskCLI">
-                        <div class="project-info">
-                            <h3>Pylytics</h3>
-                            <p>EDA tool in Python</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 4 -->
-                <a href="https://github.com/ShwetaDcode/CloudEHR-Secure" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="project-tile">
-                        <img src="media/ehr-portfolio.jpg" alt="CloudEHR-Secure">
-                        <div class="project-info">
-                            <h3>CloudEHR Secure</h3>
-                            <p>Cloud based API - Healthcare Management. A FullStack Web-App</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 5 -->
-                <a href="https://github.com/ShwetaDcode/TaskCLI" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="project-tile">
-                        <img src="media/taskcli-cover.jpg" alt="TaskCLI">
-                        <div class="project-info">
-                            <h3>TaskCLI</h3>
-                            <p>C++ command-line task manager</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 6 -->
-                <a href="https://github.com/ShwetaDcode/LiteNotes" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="project-tile">
-                        <img src="media/litenotes-cover.jpg" alt="LiteNotes">
-                        <div class="project-info">
-                            <h3>LiteNotes</h3>
-                            <p>Notes app (Laravel 9, Docker)</p>
-                        </div>
-                    </div>
-                </a>
-                
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-          
-
-              <!-- Diagnostics Support -->
-              <div class="skill-tile">
-                <h3>Diagnostics Support</h3>
-                <ul>
-                  <li>Dell Diagnostic Tools</li>
-                  <li>Hardware & Software Troubleshooting</li>
-                  <li>Live Chat Support</li>
-                </ul>
-              </div>
-
-              <!-- Web Development -->
-              <div class="skill-tile">
-                <h3>Web Development</h3>
-                <ul>
-                  <li>HTML, CSS, JavaScript, ReactJS</li>
-                  <li>PHP, Node.js, Laravel 8 & 9</li>
-                  <li>MySQL, MongoDB</li>
-                  <li>RESTful APIs, Docker</li>
-                </ul>
-              </div>
-          
-              <!-- Software Development -->
-              <div class="skill-tile">
-                <h3>Software Development</h3>
-                <ul>
-                  <li>Java, Python, C++, R, C</li>
-                  <li>TaskCLI, CLI Tools</li>
-                  <li>Git, GitHub, VS Code</li>
-                </ul>
-              </div>
-          
-              <!-- AI and ML -->
-              <div class="skill-tile">
-                <h3>AI and Machine Learning</h3>
-                <ul>
-                  <li>NumPy, Pandas, MLflow</li>
-                  <li>H2O.ai, Google AutoML</li>
-                  <li>EDA Tools (Pylytics)</li>
-                </ul>
-              </div>
-          
-              <!-- Communication -->
-              <div class="skill-tile">
-                <h3>Communication</h3>
-                <ul>
-                  <li>Customer Service & Technical Explanation</li>
-                  <li>Team Collaboration & Agile</li>
-                  <li>Documentation & Reporting</li>
-                </ul>
-              </div>
-          
-            </div>
-        </section>
-          
-          
-
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>Bachelor's in Computer Applications – Presidency College</strong>, Bangalore – 93.52% (Gold Medallist)</li>
-                <li><strong>Higher Secondary – St. Teresa's School</strong>, Kolkata – 95.25%</li>
-                <li><strong>Secondary – St. Teresa's School</strong>, Kolkata – 94.2%</li>
-            </ul>
-        </section>
-
-        <section id="research">
-            <h2>Research</h2>
-        </section>
-
-        <div class="research-tile">
-            <h3>
-                A Report on the Current and Future Applications of Blockchain Technology Beyond Cryptocurrency
-                <span class="status">(Under Internal Review)</span>
-            </h3>
-            <p>
-                This article explores the innovative applications of blockchain across industries. Conducted in-depth analysis and literature review, highlighting blockchain’s potential to revolutionize sectors such as supply chain management, healthcare, and finance. Collaborated with a team to develop comprehensive findings and theoretical models.
-            </p>
-            <ul class="research-points">
-                <li>Reviewed blockchain’s origin and growth from Nakamoto's vision to global adoption.</li>
-                <li>Explored use cases across finance, healthcare, real estate, and supply chains.</li>
-                <li>Studied integration with IoT, AI, and edge computing for smart systems.</li>
-                <li>Analyzed regulatory gaps and global coordination challenges.</li>
-                <li>Recommended action: invest in R&D, education, and pilot collaborations.</li>
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 navbar-sticky">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="text-xl font-extrabold text-indigo-600 tracking-tight">Shweta Das</div>
+            <ul class="hidden md:flex space-x-6">
+                <!-- Navigation updated for separate sections -->
+                <li><a href="#education" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Education</a></li>
+                <li><a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Skills</a></li>
+                <li><a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Experience</a></li>
+                <li><a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Projects</a></li>
+                <li><a href="#research" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Research</a></li>
+                <li><a href="#contact" class="text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1 rounded-lg transition duration-150 font-semibold">Contact</a></li>
             </ul>
         </div>
-        
+    </nav>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p><em>I am a creative software developer with a firm grasp of full stack development as well as emerging AI and web technologies. Through practical experience using languages and frameworks (JavaScript, PHP, Laravel, React, Python, and Bash) I excel at building scalable back end and front end systems. Furthermore, I have experience embedding and utilizing artificial intelligence/machine learning (AI/ML) models as part of applications for solutions to real world problems - whether that is workflow automation, improving behavior of users, or generating intelligent insights. 
-                <br><br>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
 
-                Before becoming a software developer, I was a Senior Technician with Dell Technologies, supporting enterprise-grade systems and developing the capabilities of being calm under pressure, comprehensive view of the customer, and the ability to design accurate solutions for user-centric solutions, all of which is crucial in a stressful environment. 
-                <br><br>
-                
-                Alongside my technical capabilities, I have a strong sense of curiosity about everything I do in technology that generates measurable value. Whether contributing to open-source tooling or working through the product development lifecycle from practical implementation ideas through delivery, I offer a unique blend of creativity, commitment, and collaboration to any project I engage with.</p>
-                </em>
-                - Shweta Das
-        </section>
-
-        <!-- ------------------------------------------------------------------- -->
-
-        <br><br><br><br><br>
-        <div id="contact" class="contact-section">
-            <h2>Contact Me</h2>
-            <p>I would love to hear from you! Please fill out the form below to get in touch.</p>
-            <h3>Type your: E-mail, Name and Message. (Do not share PASSWORD)</h3>
-            
-            
-            <div class="google-form-container">
-                <div class="form-frame-wrapper">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeura1GDAmDzo2XNR9TVioQEw8v-UL7H7BPqQXbu8s-RLg3PA/viewform?embedded=true" 
-                        allowfullscreen 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0"
-                        loading="lazy"></iframe>
+        <!-- Header/Hero Section -->
+        <header id="home" class="header-bg pt-16 pb-12 text-center md:text-left">
+            <div class="md:flex md:items-center md:space-x-8">
+                <div class="md:w-3/4">
+                    <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2">
+                        MSc Data Science (Heriot-Watt Dubai)
+                    </p>
+                    <h1 class="text-5xl sm:text-7xl font-extrabold text-gray-900 leading-tight mb-4">
+                        Shweta Das
+                    </h1>
+                    <div class="h-10">
+                        <span class="text-2xl sm:text-3xl font-medium text-gray-700">
+                            <span id="typed-text"></span><span id="cursor"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="md:w-1/4 mt-8 md:mt-0 flex justify-center">
+                    <div class="w-32 h-32 rounded-full bg-indigo-50 flex items-center justify-center shadow-lg">
+                        <i data-lucide="brain-circuit" class="w-16 h-16 text-indigo-600"></i>
+                    </div>
                 </div>
             </div>
+            
+            <div class="mt-8 text-lg text-gray-600 max-w-4xl mx-auto md:mx-0">
+                <p>An aspiring <b>AI Industry-Oriented Researcher</b> and Gold Medallist with deep proficiency in Full Stack development and machine learning systems. Based in Dubai, my immediate goal is to contribute to cutting-edge research at institutions shaping the future of AI in the region.</p>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <div class="space-y-24 mt-16">
+
+            <!-- Education Section (First Content Section) -->
+            <section id="education">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2">
+                    <i data-lucide="award" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Education
+                </h2>
+                <ul class="space-y-6">
+                    <!-- New MSc Entry -->
+                    <li class="bg-white p-6 rounded-xl shadow-lg border border-indigo-200 hover:shadow-xl transition duration-300">
+                        <div class="flex items-center mb-2">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 text-indigo-600"></i>
+                            <strong class="text-indigo-600 text-xl">MSc Data Science (Pursuing)</strong>
+                        </div>
+                        <p class="text-gray-900 font-semibold ml-9">Heriot-Watt University Dubai</p>
+                        <p class="text-sm text-gray-600 ml-9">Focused on Advanced AI, ML, and Applied Research</p>
+                    </li>
+                    <!-- Gold Medallist Entry -->
+                    <li class="bg-white p-6 rounded-xl shadow-lg border border-green-100 hover:shadow-xl transition duration-300">
+                        <div class="flex items-center mb-2">
+                            <i data-lucide="trophy" class="w-6 h-6 mr-3 text-green-600"></i>
+                            <strong class="text-green-600 text-xl">Gold Medallist - Bachelor's in Computer Applications</strong>
+                        </div>
+                        <p class="text-gray-900 font-semibold ml-9">Presidency College, Bangalore (93.52%)</p>
+                        <p class="text-sm text-gray-600 ml-9">Highest GPA in graduating class.</p>
+                    </li>
+                    <li class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <div class="flex items-center mb-2">
+                            <i data-lucide="school" class="w-6 h-6 mr-3 text-gray-500"></i>
+                            <p class="text-gray-900 font-semibold text-xl">Higher Secondary</p>
+                        </div>
+                        <p class="text-sm text-gray-600 ml-9">St. Teresa's School, Kolkata (95.25%)</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Skills Section (Second Content Section, immediately after Education) -->
+            <section id="skills" class="pt-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2">
+                    <i data-lucide="wrench" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Core Competencies
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Skill Tile 1: Web Development -->
+                    <div class="bg-white p-5 rounded-xl shadow-md border border-indigo-50">
+                        <i data-lucide="code" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <p class="text-lg font-semibold text-indigo-700">Web & Backend</p>
+                        <p class="text-sm text-gray-600 mt-1">React, PHP, Node.js, Laravel, MySQL, MongoDB, Docker, REST</p>
+                    </div>
+                    <!-- Skill Tile 2: Software & Data -->
+                    <div class="bg-white p-5 rounded-xl shadow-md border border-indigo-50">
+                        <i data-lucide="database" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <p class="text-lg font-semibold text-indigo-700">Software & Data</p>
+                        <p class="text-sm text-gray-600 mt-1">Python, Java, C++, R, C, NumPy, Pandas, MLflow, H2O.ai</p>
+                    </div>
+                    <!-- Skill Tile 3: Systems & Tools -->
+                    <div class="bg-white p-5 rounded-xl shadow-md border border-indigo-50">
+                        <i data-lucide="settings" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <p class="text-lg font-semibold text-indigo-700">Systems & Tools</p>
+                        <p class="text-sm text-gray-600 mt-1">Git/GitHub, VS Code, Linux CLI, Dell Diagnostics, Customer Support</p>
+                    </div>
+                    <!-- Skill Tile 4: AI/ML -->
+                    <div class="bg-white p-5 rounded-xl shadow-md border border-indigo-50">
+                        <i data-lucide="cpu" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <p class="text-lg font-semibold text-indigo-700">AI/ML</p>
+                        <p class="text-sm text-gray-600 mt-1">Applied LLMs, Data Preprocessing, Model Training, Google AutoML</p>
+                    </div>
+                    <!-- Skill Tile 5: Soft Skills -->
+                    <div class="bg-white p-5 rounded-xl shadow-md border border-indigo-50">
+                        <i data-lucide="user-check" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <p class="text-lg font-semibold text-indigo-700">Professional</p>
+                        <p class="text-sm text-gray-600 mt-1">Agile, Collaboration, Technical Documentation, Customer Focus</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Professional Experience Section -->
+            <section id="experience">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2">
+                    <i data-lucide="briefcase" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Professional Experience
+                </h2>
+                <ul class="space-y-12">
+                    <li class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Senior Technician, Technical Support</h3>
+                                <p class="text-indigo-600 font-semibold">Dell Technologies</p>
+                            </div>
+                            <p class="text-sm text-gray-500 md:text-right mt-2 md:mt-0">July 2024 – October 2024</p>
+                        </div>
+                        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+                            <li>Delivered advanced technical support via chat, achieving high-efficiency resolution rates on complex Dell product issues.</li>
+                            <li>Utilized specialized diagnostic tools for rapid problem analysis, embodying a systematic approach to IT resolution.</li>
+                            <li>Drove operational excellence and maintained high customer service standards through proactive and empathetic case management.</li>
+                        </ul>
+                    </li>
+                    <li class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Software Developer (Intern)</h3>
+                                <p class="text-indigo-600 font-semibold">SolutionBuggy</p>
+                            </div>
+                            <p class="text-sm text-gray-500 md:text-right mt-2 md:mt-0">February 2023 – April 2023</p>
+                        </div>
+                        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+                            <li>Led the migration of the official website to **Laravel 8.0**, significantly enhancing backend architecture and performance.</li>
+                            <li>Contributed to frontend feature development and UX improvements using **ReactJS**.</li>
+                            <li>Collaborated on critical back-end systems including database management, email automation, and secure payment confirmations.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2">
+                    <i data-lucide="layers-3" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Featured Projects
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Tile 1 -->
+                    <a href="https://github.com/ShwetaDcode/ToneForgeAI" class="group block project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                ToneForge AI 
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">ToneForge AI</h3>
+                                <p class="text-gray-600 mt-1">Advanced Tone Analysis and Generation Model (AI/ML)</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Tile 2 -->
+                    <a href="https://github.com/ShwetaDcode/plenT" class="group block project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                plenT 
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">plenT</h3>
+                                <p class="text-gray-600 mt-1">Full-Stack Crypto Trading Platform (React, Node, MongoDB)</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Tile 3 -->
+                    <a href="https://github.com/ShwetaDcode/CloudEHR-Secure" class="group block project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                CloudEHR Secure [Image of a cloud computing icon]
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">CloudEHR Secure</h3>
+                                <p class="text-gray-600 mt-1">Secure Healthcare Management API (Full Stack Web-App)</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Tile 4 -->
+                    <a href="https://github.com/ShwetaDcode/TaskCLI" class="group block project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                TaskCLI 
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">TaskCLI</h3>
+                                <p class="text-gray-600 mt-1">High-Performance C++ Command-Line Task Manager</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Project Tile 5 -->
+                    <a href="https://github.com/ShwetaDcode/LiteNotes" class="group block project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                LiteNotes 
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">LiteNotes</h3>
+                                <p class="text-gray-600 mt-1">Modern Notes Application (Laravel 9, Docker)</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Tile 6 -->
+                    <div onclick="showUpdationMessage();" class="group block project-link cursor-pointer">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transform transition duration-300 hover:scale-[1.02] hover:shadow-xl">
+                            <div class="h-48 w-full bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl font-bold">
+                                Pylytics 
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition duration-300">Pylytics</h3>
+                                <p class="text-gray-600 mt-1">Exploratory Data Analysis (EDA) Tool in Python</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2">
+                    <i data-lucide="book-open-text" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Research & Analysis
+                </h2>
+
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            A Report on the Current and Future Applications of Blockchain Technology Beyond Cryptocurrency
+                        </h3>
+                        <span class="status text-sm font-semibold text-orange-600 bg-orange-100 py-1 px-3 rounded-full mt-2 sm:mt-0">
+                            Under Internal Review
+                        </span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        This comprehensive article explores the innovative applications of blockchain across industries beyond finance. Conducted in-depth analysis and literature review, highlighting blockchain’s potential to revolutionize sectors such as supply chain management and healthcare. Developed comprehensive findings and theoretical models for future decentralized systems.
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600 list-inside">
+                        <li class="flex items-start"><i data-lucide="dot" class="w-5 h-5 flex-shrink-0 text-indigo-500 mr-2"></i>Reviewed blockchain’s origin and growth from Nakamoto's vision to global adoption.</li>
+                        <li class="flex items-start"><i data-lucide="dot" class="w-5 h-5 flex-shrink-0 text-indigo-500 mr-2"></i>Studied integration with IoT, AI, and edge computing for smart systems.</li>
+                        <li class="flex items-start"><i data-lucide="dot" class="w-5 h-5 flex-shrink-0 text-indigo-500 mr-2"></i>Explored use cases across finance, healthcare, real estate, and supply chains.</li>
+                        <li class="flex items-start"><i data-lucide="dot" class="w-5 h-5 flex-shrink-0 text-indigo-500 mr-2"></i>Analyzed regulatory gaps and global coordination challenges.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="pb-20 pt-10">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-100 pb-2 text-center">
+                    <i data-lucide="send" class="inline-block w-8 h-8 mr-3 text-indigo-500"></i>
+                    Connect on Research & AI
+                </h2>
+                <div class="max-w-3xl mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-100">
+                    <p class="text-center text-lg text-gray-600 mb-8">I'm keenly interested in collaborating on challenging AI projects, especially those related to my MSc focus in Dubai.</p>
+
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <a href="mailto:your.email@example.com" class="text-indigo-600 hover:text-indigo-700 flex items-center transition duration-200">
+                            <i data-lucide="mail" class="w-6 h-6 mr-2"></i>
+                            <span class="font-medium">Email</span>
+                        </a>
+                        <a href="https://github.com/ShwetaDcode" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-700 flex items-center transition duration-200">
+                            <i data-lucide="github" class="w-6 h-6 mr-2"></i>
+                            <span class="font-medium">GitHub</span>
+                        </a>
+                        <!-- Add LinkedIn or other relevant links here -->
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Send Me a Message</h3>
+
+                    <!-- Google Form Embed - styled to be full width and responsive -->
+                    <div class="google-form-container">
+                        <div class="form-frame-wrapper">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeura1GDAmDzo2XNR9TVioQEw8v-UL7H7BPqQXbu8s-RLg3PA/viewform?embedded=true"
+                                allowfullscreen
+                                frameborder="0"
+                                marginheight="0"
+                                marginwidth="0"
+                                loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
+    </main>
 
-        <!-- ------------------------------------------------------------------- -->
-    </div>
-
-    <footer>
-        &copy; 2025 Shweta Das. All rights reserved. (Website created by Shweta Das)
+    <footer class="mt-16 bg-gray-50 border-t border-gray-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            &copy; 2025 Shweta Das. All rights reserved. | <a href="#home" class="hover:text-indigo-600 transition duration-150">Back to Top</a>
+        </div>
     </footer>
 
-    <!-- ------------------------------------------------------------------- -->      
+    <!-- JavaScript for Dynamic Typing Effect and Icon Initialization -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-    <!-- Link to external JavaScript file -->
-    <script src="scripts/script_JS.js"></script> 
+        // --- Typing Effect Logic ---
+        const typedTextSpan = document.getElementById("typed-text");
+        // Updated text array to reflect new AI/Research focus
+        const textArray = ["AI Research Engineer", "Applied Data Scientist", "Full-Stack ML Systems", "MSc Candidate (Dubai)"];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000;
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if(textArray.length) setTimeout(type, newTextDelay);
+        });
+
+        // --- Message Box / Alert Replacement ---
+        function showUpdationMessage() {
+            const message = "Pylytics is currently undergoing major architectural updates and is not publicly available yet. Please check back later!";
+            
+            // Create a simple modal/snackbar
+            const existingModal = document.getElementById('custom-alert-modal');
+            if (existingModal) existingModal.remove();
+
+            const modal = document.createElement('div');
+            modal.id = 'custom-alert-modal';
+            modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300';
+            modal.innerHTML = `
+                <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full transform scale-100 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-3 flex items-center"><i data-lucide="info" class="w-6 h-6 mr-2"></i> Update In Progress</h3>
+                    <p class="text-gray-700 mb-6">${message}</p>
+                    <button id="close-alert" class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition duration-150">
+                        Got It
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            lucide.createIcons(); // Re-initialize icons for the modal
+
+            document.getElementById('close-alert').addEventListener('click', () => {
+                modal.remove();
+            });
+        }
+    </script>
 
 </body>
-
 </html>
