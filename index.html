@@ -64,11 +64,10 @@
 <body class="selection:bg-indigo-100 selection:text-indigo-600">
 
     <!-- Sticky Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 navbar-sticky">
+    <!-- <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 navbar-sticky">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="text-xl font-extrabold text-indigo-600 tracking-tight">Shweta Das</div>
             <ul class="hidden md:flex space-x-6">
-                <!-- Navigation updated for separate sections -->
                 <li><a href="#education" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Education</a></li>
                 <li><a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Skills</a></li>
                 <li><a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Experience</a></li>
@@ -77,6 +76,37 @@
                 <li><a href="#contact" class="text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1 rounded-lg transition duration-150 font-semibold">Contact</a></li>
             </ul>
         </div>
+    </nav> -->
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 navbar-sticky">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="text-xl font-extrabold text-indigo-600 tracking-tight">Shweta Das</div>
+    
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#education" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Education</a></li>
+                <li><a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Skills</a></li>
+                <li><a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Experience</a></li>
+                <li><a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Projects</a></li>
+                <li><a href="#research" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Research</a></li>
+                <li><a href="#contact" class="text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1 rounded-lg transition duration-150 font-semibold">Contact</a></li>
+            </ul>
+    
+            <!-- Mobile Burger Menu Button -->
+            <button id="burger-btn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-400 hover:text-indigo-600 hover:border-indigo-600 transition duration-150">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    
+        <!-- Mobile Menu (hidden by default) -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 px-4 pb-4">
+            <li><a href="#education" class="block text-gray-600 hover:text-indigo-600 font-medium">Education</a></li>
+            <li><a href="#skills" class="block text-gray-600 hover:text-indigo-600 font-medium">Skills</a></li>
+            <li><a href="#experience" class="block text-gray-600 hover:text-indigo-600 font-medium">Experience</a></li>
+            <li><a href="#projects" class="block text-gray-600 hover:text-indigo-600 font-medium">Projects</a></li>
+            <li><a href="#research" class="block text-gray-600 hover:text-indigo-600 font-medium">Research</a></li>
+            <li><a href="#contact" class="block text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1 rounded-lg font-semibold">Contact</a></li>
+        </ul>
     </nav>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
@@ -474,6 +504,14 @@
 
     <!-- JavaScript for Dynamic Typing Effect and Icon Initialization -->
     <script>
+
+        // Mobile Burger Menu
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        burgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
         // Initialize Lucide Icons
         lucide.createIcons();
 
